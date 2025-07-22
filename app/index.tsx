@@ -1,15 +1,15 @@
-import { Text, View } from "react-native";
+import { CounterProvider } from '../contexts/CounterContext';
+import {CounterDisplay, CounterStatus, CounterControls} from '../components/counter';
+import {View} from 'react-native';
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <CounterProvider>
+      <View>
+      <CounterDisplay/>
+      <CounterControls/>
+      <CounterStatus/>
+      </View>
+    </CounterProvider>
   );
 }
