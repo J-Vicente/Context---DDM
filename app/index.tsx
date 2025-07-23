@@ -1,11 +1,11 @@
 import { CounterProvider } from '../contexts/CounterContext';
 import {CounterDisplay, CounterStatus, CounterControls} from '../components/counter';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 export default function Index() {
   return (
     <CounterProvider>
-      <View>
+      <View style={styles.container}>
       <CounterDisplay/>
       <CounterControls/>
       <CounterStatus/>
@@ -13,3 +13,10 @@ export default function Index() {
     </CounterProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container:{
+    display: 'flex',
+    alignItems: 'center',
+  }
+})
